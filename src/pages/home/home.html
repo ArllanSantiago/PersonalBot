@@ -1,0 +1,49 @@
+<ion-header hidden>
+  <ion-navbar>
+    <ion-title>
+      PRECA.BOT
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-fab bottom right >
+    <button ion-fab color="danger">
+        <ion-icon name="mic"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-list no-lines class="chat-list">
+    <ion-item *ngFor ="let message of messages" class="chat-item">
+      <!--PrecaBot-->             
+      <ion-avatar item-left *ngIf="message.sender =='PrecaBot'">
+          <img src="assets/imgs/PrecaBotEyes.jpg">
+      </ion-avatar>
+      <!--me-->           
+      <ion-avatar item-right *ngIf="message.sender =='me'">
+          <img src="assets/imgs/me.png">
+      </ion-avatar>      
+      <div *ngIf="message.sender == 'PrecaBot'" class="bubble me">
+          <h3>{{ message.text }}</h3>
+      </div>
+      <div *ngIf="message.sender == 'me'" class="bubble you">
+          <h3>{{ message.text }}</h3>
+      </div>      
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-item>
+          <ion-input type="text" placeholder="Insira sua mensagem aqui..."></ion-input>
+          <button ion-button icon-only item-right clear >
+            <ion-icon name="send"></ion-icon>
+          </button>
+      </ion-item>    
+    </ion-toolbar>
+  </ion-footer>
+
+
+

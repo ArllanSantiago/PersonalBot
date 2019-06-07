@@ -1,0 +1,7 @@
+{
+  "name": "PrecaBot3",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
